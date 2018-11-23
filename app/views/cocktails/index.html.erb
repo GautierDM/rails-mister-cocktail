@@ -1,10 +1,40 @@
-<h1>Cocktails Maniac</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1512145072635-5ba923d1b9fb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1da9a4fabc2ad85ebc1bb08c1f09cf4b&auto=format&fit=crop&w=1650&q=80');">
+  <div class="banner-content">
+    <h1>Cocktail Maniac</h1>
+    <p>Les meilleurs cocktails du monde...</p>
+  </div>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail[:name], cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+
+<div class="navbar-wagon">
+  <a href="/" class="navbar-wagon-brand">
+    <div class="logo" style='background-image: url( <%= asset_path 'logo.jpg'  %>);'></div>
+  </a>
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <a href="" class="navbar-wagon-item navbar-wagon-link"> <%= link_to "Add Cocktail", new_cocktail_path %></a>
+  </div>
+</div>
 
 
-<%= link_to "Add a new Cocktail", new_cocktail_path %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4 card">
+        <p><%= link_to cocktail[:name], cocktail_path(cocktail) %></p>
+      </div>
+     <% end %>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    All right reserved to Gautier la Machinaaaa at Paris
+  </div>
+</div>
